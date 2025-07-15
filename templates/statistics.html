@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik Ringkasan Kualitas Anggur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <h1>🍷 Statistik Ringkasan</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-button">Beranda</a>
+                <a href="{{ url_for('show_visualizations') }}" class="nav-button">Visualisasi</a>
+                <a href="{{ url_for('predict') }}" class="nav-button">Prediksi</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <h2>Statistik Kunci</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h3>Rata-rata Kualitas Anggur</h3>
+                <p class="stat-value">{{ avg_quality }}</p>
+            </div>
+            <div class="stat-box">
+                <h3>Distribusi Kualitas</h3>
+                <ul class="quality-list">
+                    {% for q, count in quality_dist.items() %}
+                        <li>Kualitas {{ q }}: <span>{{ count }} Anggur</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% for prop, value in avg_props.items() %}
+                <div class="stat-box">
+                    <h3>Rata-rata {{ prop.replace('_', ' ').title() }}</h3>
+                    <p class="stat-value">{{ value|round(2) }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Dashboard Kualitas Anggur. Dibuat dengan Flask.</p>
+        </div>
+    </footer>
+</body>
+</html>

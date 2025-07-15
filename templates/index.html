@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kualitas Anggur - Beranda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <h1>🍷 Dashboard Kualitas Anggur Merah</h1>
+            <nav>
+                <a href="{{ url_for('show_statistics') }}" class="nav-button">Statistik</a>
+                <a href="{{ url_for('show_visualizations') }}" class="nav-button">Visualisasi</a>
+                <a href="{{ url_for('predict') }}" class="nav-button">Prediksi</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-content welcome-section">
+        <h2>Selamat Datang di Dashboard Kualitas Anggur!</h2>
+        <p>Gunakan navigasi di atas untuk menjelajahi statistik, visualisasi, dan fitur prediksi kualitas anggur merah.</p>
+        <div class="quick-links">
+            <a href="{{ url_for('show_statistics') }}" class="big-button">Lihat Statistik Ringkasan</a>
+            <a href="{{ url_for('show_visualizations') }}" class="big-button">Jelajahi Visualisasi Data</a>
+            <a href="{{ url_for('predict') }}" class="big-button">Lakukan Prediksi Kualitas</a>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Dashboard Kualitas Anggur. Dibuat dengan Flask.</p>
+        </div>
+    </footer>
+</body>
+</html>

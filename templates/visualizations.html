@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisasi Data Kualitas Anggur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <h1>🍷 Visualisasi Data</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-button">Beranda</a>
+                <a href="{{ url_for('show_statistics') }}" class="nav-button">Statistik</a>
+                <a href="{{ url_for('predict') }}" class="nav-button">Prediksi</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <h2>Visualisasi Data</h2>
+
+        <div class="chart-grid">
+            <div class="plot-card">
+                <h3>Distribusi Kualitas Anggur</h3>
+                <img src="data:image/png;base64,{{ quality_dist_plot }}" alt="Distribusi Kualitas Anggur">
+            </div>
+
+            <div class="plot-card">
+                <h3>Matriks Korelasi</h3>
+                <img src="data:image/png;base64,{{ corr_plot }}" alt="Matriks Korelasi">
+            </div>
+
+            <div class="plot-card">
+                <h3>Distribusi Kadar Alkohol</h3>
+                <img src="data:image/png;base64,{{ alcohol_dist_plot }}" alt="Distribusi Kadar Alkohol">
+            </div>
+            <div class="plot-card">
+                <h3>Distribusi Keasaman Volatil</h3>
+                <img src="data:image/png;base64,{{ volatile_acidity_dist_plot }}" alt="Distribusi Keasaman Volatil">
+            </div>
+
+            <div class="plot-card">
+                <h3>Kadar Alkohol Berdasarkan Kualitas</h3>
+                <img src="data:image/png;base64,{{ alcohol_boxplot }}" alt="Box Plot Alkohol Berdasarkan Kualitas">
+            </div>
+            <div class="plot-card">
+                <h3>Keasaman Volatil Berdasarkan Kualitas</h3>
+                <img src="data:image/png;base64,{{ volatile_acidity_boxplot }}" alt="Box Plot Keasaman Volatil Berdasarkan Kualitas">
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Dashboard Kualitas Anggur. Dibuat dengan Flask.</p>
+        </div>
+    </footer>
+</body>
+</html>

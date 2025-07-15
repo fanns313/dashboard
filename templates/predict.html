@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Kualitas Anggur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <h1>🍷 Prediksi Kualitas Anggur</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-button">Kembali ke Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <h2>Masukkan Sifat Anggur</h2>
+        <form method="POST" class="prediction-form">
+            {% for feature in features %}
+            <div class="form-group">
+                <label for="{{ feature }}">{{ feature.replace('_', ' ').title() }}:</label>
+                <input type="number" step="any" name="{{ feature }}" id="{{ feature }}" value="{{ feature_placeholders.get(feature, '') }}" required>
+            </div>
+            {% endfor %}
+            <div class="form-group">
+                <button type="submit" class="submit-button">Prediksi Kualitas</button>
+            </div>
+        </form>
+
+        {% if prediction_result %}
+            <div class="result-box {% if 'Error' in prediction_result %}error{% endif %}">
+                {{ prediction_result }}
+            </div>
+        {% endif %}
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Dashboard Kualitas Anggur. Dibuat dengan Flask.</p>
+        </div>
+    </footer>
+</body>
+</html>

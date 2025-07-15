@@ -1,0 +1,354 @@
+/* Import Google Font - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* --- General Body Styles --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Soft light gray background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer stays at bottom */
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: #2c3e50; /* Dark blue-gray */
+    color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #ffffff;
+    border-bottom: none; /* Remove border from H1 in header */
+}
+
+.main-header nav a { /* Styling for nav links */
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-header nav a.nav-button { /* Specific style for nav buttons */
+    background-color: #3498db; /* Bright blue button */
+    font-weight: bold;
+}
+
+.main-header nav a.nav-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* --- Main Content Container --- */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px; /* Add padding to sides */
+}
+
+.main-content {
+    flex-grow: 1; /* Allow content to grow and push footer down */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* More prominent shadow */
+}
+
+/* Welcome section for index.html */
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+.welcome-section h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: none;
+}
+.welcome-section p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.big-button {
+    background-color: #2ecc71; /* Green */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+.big-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+}
+
+
+/* --- Headings --- */
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* --- General Text and Links --- */
+p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+/* --- Stats Grid for Dashboard --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-box {
+    background: #eaf6fa; /* Light blue */
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.stat-box h3 {
+    color: #3498db;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.stat-box p.stat-value {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.stat-box ul.quality-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+
+.stat-box ul.quality-list li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.stat-box ul.quality-list li span {
+    font-weight: 700;
+    color: #333;
+}
+
+
+/* --- Plot Cards / Chart Grid --- */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Two columns for plots */
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.plot-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.plot-card img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* --- Form Styles for Prediction Page --- */
+.prediction-form {
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.prediction-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 1.05em;
+}
+
+.prediction-form input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prediction-form input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+.submit-button {
+    background-color: #2ecc71; /* Green submit button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #27ae60; /* Darker green on hover */
+    transform: translateY(-1px);
+}
+
+/* Prediction Result Display */
+.result-box {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #d4edda; /* Light green background */
+    border: 1px solid #28a745; /* Green border */
+    border-radius: 8px;
+    font-weight: bold;
+    color: #155724; /* Dark green text */
+    text-align: center;
+    font-size: 1.3em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.result-box.error {
+    background-color: #f8d7da; /* Light red background for errors */
+    border-color: #dc3545; /* Red border */
+    color: #721c24; /* Dark red text */
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #2c3e50; /* Dark blue-gray, matching header */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-header h1 {
+        margin-bottom: 10px;
+    }
+    .main-header nav {
+        width: 100%;
+    }
+    .main-header nav a.nav-button {
+        display: block;
+        width: calc(100% - 40px); /* Adjust button width */
+        margin: 5px auto; /* Add margin between stacked buttons */
+    }
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .stats-grid, .chart-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+    .prediction-form {
+        padding: 20px;
+    }
+    .big-button { /* Adjust big buttons for small screens */
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .quick-links {
+        flex-direction: column; /* Stack quick links vertically */
+    }
+}
